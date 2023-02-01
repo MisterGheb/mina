@@ -1,0 +1,47 @@
+name: Linter
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  RSA_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
+
+jobs:
+  check:
+    outputs:
+      status: ${{ steps.check_env_file.outputs.files_exists }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Check Enc Env file existence
+      id: check_env_file
+      uses: andstor/file-existence-action@v2
+      with:
+        files: "env/.env.${{ github.ref_name }}.enc"
+
+  lint:
+    needs: check
+    runs-on: ubuntu-latest
+    if: needs.check.outputs.status == 'true'
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8, 3.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Load env
+      run: |
+        python setup/load_env.py env/.env.enc
+    - name: Load .env file
+      uses: xom9ikk/dotenv@v1.0.2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Run lint
+      run: |
+        bash scripts/lint.sh

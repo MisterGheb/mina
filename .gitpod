@@ -1,0 +1,9 @@
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Setup Project
+    init: |
+      python setup/git_hooks.py
+      python setup/dev.py
+      bash scripts/init.sh
+    command: |
+      bash scripts/entrypoint.sh
