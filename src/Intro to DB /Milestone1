@@ -1,0 +1,58 @@
+CREATE TABLE Normal_1(  
+    userid int,
+    user_Name int,
+    stock_ID varchar(255),
+    stock_Name varchar(255),
+    stock_Type varchar(255),
+    stock_TypeID varchar(255),
+    profit_Loss int
+) COMMENT '';
+
+CREATE TABLE Normal_2_table1(
+
+    userid int,
+    user_Name int,
+    
+)
+
+CREATE TABLE Normal_2_table2(
+    stock_ID varchar(255),
+    stock_Name varchar(255),
+    stock_Type varchar(255),
+    stock_TypeID varchar(255),
+)
+
+CREATE TABLE Normal_2_table3(
+
+    userid int,
+    stock_ID varchar(255),
+    profit_Loss int
+
+)
+
+CREATE TABLE Normal_3_table1(
+
+    userid int,
+    user_Name int
+    
+)
+
+CREATE TABLE Normal_3_table2(
+    stock_ID varchar(255),
+    stock_Name varchar(255),
+    stock_TypeID varchar(255)
+)
+
+CREATE TABLE Normal_3_table3(
+
+    userid int,
+    stock_ID varchar(255),
+    profit_Loss int
+)
+
+CREATE TABLE Normal_3_table4(
+
+    stock_Type varchar(255),
+    stock_TypeID varchar(255)
+
+)
