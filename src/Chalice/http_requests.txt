@@ -1,0 +1,22 @@
+Get game status
+
+curl --location --request GET 'api.spacetraders.io/game/status'
+
+Claim a token
+curl --location --request POST 'https://api.spacetraders.io/users/minaghebrial/claim'
+
+taking out a loan
+curl --location --request POST 'https://api.spacetraders.io/my/loans?token=14c16f6d-d35d-475a-877b-44fa017b0c3d&type=STARTUP'
+
+buying a ship
+curl --location --request POST 'https://api.spacetraders.io/my/ships?token=14c16f6d-d35d-475a-877b-44fa017b0c3d&type=JW-MK-I&location=OE-PM-TR'
+
+buy some metal
+curl --location --request POST 'https://api.spacetraders.io/my/purchase-orders?token=14c16f6d-d35d-475a-877b-44fa017b0c3d&shipId=cldpum3m035855915s6hzu406zh&good=METALS&quantity=25'
+
+
+selling metals
+curl --location --request POST 'https://api.spacetraders.io/my/sell-orders?token=14c16f6d-d35d-475a-877b-44fa017b0c3d&shipId=cldpum3m035855915s6hzu406zh&good=METALS&quantity=25'
+
+building a structure
+curl --location --request POST 'https://api.spacetraders.io/my/structures?token=14c16f6d-d35d-475a-877b-44fa017b0c3d&location=OE-PM-TR&type=MINE'
