@@ -19,25 +19,28 @@ WHERE date >= DATEADD(month, -1, CURRENT_TIMESTAMP)
 GROUP BY stock_name, date, price
 ORDER BY percentage_growth DESC
 LIMIT 5
+--join another table with date and then you can refernce date  USE OHLCV table
 
 --4. This is an SQL query that calcualtes the average buying prices for given stock
 
-SELECT user_id, AVG(price) AS avg_price
+SELECT user_id, sum(bid_price*volume)/sum(volume) AS avg_price    --this will help with chalice assignment 
 FROM dbAssMilestone2_holdings
 GROUP BY user_id;
+
+--use weighted average 
 
 --5. This is an SQL query that first has a query that gets the current price of a stock on todays date and then calculates you profit or loss 
 -- by multiplying the number of shares a user has in the portfolio
 
 SELECT 
-  users.name,
+  users.id,
   SUM(CASE 
-    WHEN stocks.price > holdings.bid_price THEN (stocks.price - holdings.bid_price) * holdings.quantity
-    ELSE (holdings.bid_price - stocks.price) * holdings.quantity
+    WHEN stocks.price > dbAssMilestone2_holdings.bid_price THEN (stocks.price - dbAssMilestone2_holdings.bid_price) * holdings.volume
+    ELSE (holdings.bid_price - stocks.price) * holdings.volume
   END) AS net_profit_loss
 FROM 
-  holdings
-  JOIN stocks ON holdings.stocks_id = stocks.id
-  JOIN users ON holdings.user_id = users.id
+  dbAssMilestone2_holdings
+  JOIN stocks ON dbAssMilestone2_holdings.stocks_id = stocks.id
+  JOIN users ON dbAssMilestone2_holdings.user_id = users.id
 GROUP BY 
-  users.name;
+  users.id;
