@@ -13,13 +13,15 @@ GROUP BY date = "date"
 --3. This is an SQL query that takes stock_id, stock price and date from a stocks table and calculates the average price of each stock at the end of a month
 -- it then uses that information to calculate the percentage growth of that stock and returns a limit of 5 stocks
 
-SELECT stocks.name, (price - (LAG(price) OVER (PARTITION BY stocks.name ORDER BY date DESC))) / LAG(price) OVER (PARTITION BY stock_name ORDER BY date DESC) * 100 as percentage_growth
-FROM dbAssMilestone2_stock
-WHERE date >= DATEADD(month, -1, CURRENT_TIMESTAMP)
-GROUP BY stock_name, date, price
+SELECT ohlcv.stocks_id, (open - (LAG(open, 30) OVER (PARTITION BY ohlcv.stocks_id ORDER BY day DESC))) / LAG(open, 30) OVER (PARTITION BY ohlcv.stocks_id ORDER BY day DESC) * 100 as percentage_growth
+FROM ohlcv
+INNER JOIN market_day
+ON ohlcv.market_id = market_day.id
+WHERE day =61 
 ORDER BY percentage_growth DESC
 LIMIT 5
 --join another table with date and then you can refernce date  USE OHLCV table
+-- join the market day to OHLCV
 
 --4. This is an SQL query that calcualtes the average buying prices for given stock
 
