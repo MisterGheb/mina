@@ -1,0 +1,37 @@
+
+{
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "label": "Stock ID",
+        "scope": "#/properties/id"
+      },
+
+      {
+        "type": "Control",
+        "label": "Stock name",
+        "scope": "#/properties/name"
+      },
+      {
+        "type": "Control",
+        "label": "Price",
+        "scope": "#/properties/price"
+      },
+      {
+        "type": "Control",
+        "label": "Sector",
+        "scope": "#/properties/sectors_id"
+      },
+      {
+        "type": "Control",
+        "label": "Total volume",
+        "scope": "#/properties/total_volume"
+      },
+      {
+        "type": "Control",
+        "label": "Unallocated volume",
+        "scope": "#/properties/unallocated"
+      }
+    ]
+  }

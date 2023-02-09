@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Create Stock",
+    "description": "Form for creating a new stock entry",
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "total_volume",
+      "unallocated",
+      "price",
+      "sectors_id"
+
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "title": "Stock Symbol",
+        "description": "The stock's unique symbol on the exchange"
+      },
+      "name": {
+        "type": "string",
+        "title": "Company Name",
+        "description": "The name of the company issuing the stock"
+      },
+      "total_volume": {
+        "type": "integer",
+        "title": "total volume of stocks",
+        "description": "The total volume of stocks in the entire company"
+      },
+      "unallocated": {
+        "type": "integer",
+        "title": "Unallocated Stocks",
+        "description": "Total unallocated stocks for a company"
+      },
+      "price": {
+        "type": "number",
+        "title": "Stock price",
+        "description": "The current stock price"
+      },
+      "sectors_id": {
+        "type": "integer",
+        "title": "Sector ID",
+        "description": "What sector does the company fall under"
+      }
+      
+    }
+  }
+  

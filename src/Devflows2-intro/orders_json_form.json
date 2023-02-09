@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Create Order",
+    "description": "Form for creating a new order entry",
+    "type": "object",
+    "required": [
+        "bid_price",
+        "type",
+        "status",
+        "bid_volume",
+        "executed_volume",
+        "users_id",
+        "stocks_id"
+    ],
+    "properties": {
+        "bid_price": {
+            "type": "string",
+            "title": "Bid Price",
+            "description": "Price set for the order"
+        },
+        "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "Order type",
+            "enum": [
+                "BUY",
+                "SELL"
+            ]
+        },
+        "Statstatusus": {
+            "type": "string",
+            "title": "Status",
+            "description": "Order Status",
+            "enum": [
+                "Cancelled",
+                "Closed",
+                "Opened",
+                "Pending"
+            ]
+        },
+        "bid_volume": {
+            "type": "number",
+            "title": "Bid Volume",
+            "description": "The amount of stock in the order"
+        },
+        "executed_volume": {
+            "type": "string",
+            "title": "Executed Volume",
+            "description": "The amount of stock that went through the order"
+        },
+        "users_id": {
+            "type": "string",
+            "title": "User ID",
+            "description": "the user associated with the order"
+        },
+        "stocks_id": {
+            "type": "string",
+            "title": "Stock ID",
+            "description": "the stock associated with the order"
+        }
+    }
+}

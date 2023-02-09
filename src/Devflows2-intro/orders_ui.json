@@ -1,0 +1,42 @@
+
+{
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "label": "Bid Price",
+        "scope": "#/properties/bid_price"
+      },
+
+      {
+        "type": "Control",
+        "label": "Type",
+        "scope": "#/properties/type"
+      },
+      {
+        "type": "Control",
+        "label": "Status",
+        "scope": "#/properties/status"
+      },
+      {
+        "type": "Control",
+        "label": "Bid Volume",
+        "scope": "#/properties/bid_volume"
+      },
+      {
+        "type": "Control",
+        "label": "Executed Volume",
+        "scope": "#/properties/executed_volume"
+      },
+      {
+        "type": "Control",
+        "label": "User ID",
+        "scope": "#/properties/users_id"
+      },
+      {
+        "type": "Control",
+        "label": "Stock ID",
+        "scope": "#/properties/stocks_id"
+      }
+    ]
+  }
