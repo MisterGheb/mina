@@ -1,0 +1,9 @@
+1. Storing large amounts of unstructured data: NoSQL databases can easily handle large amounts of unstructured data, while SQL databases require a predefined schema.
+
+2. Scaling: NoSQL databases are designed to scale out horizontally. This makes them ideal for applications that need to handle high levels of read and write requests.
+
+3. Dynamic schema: NoSQL databases are schema-less, meaning that you can add new fields when needed and don’t need to define a schema up front.
+
+4. Real-time analytics: NoSQL databases are well-suited for real-time analytics, as they can quickly query and process large amounts of data.
+
+5. Cloud-based applications: NoSQL databases are ideal for cloud-based applications as they can easily be scaled up or down to meet demand.
