@@ -11,3 +11,4 @@
 keys/public_key.pem
 keys/private_key.pem
 keys/symmetric_keyfile.key
+setup/__pycache__/
