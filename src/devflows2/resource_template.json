@@ -1,0 +1,26 @@
+{
+    "product_name": "Minabot",
+    "connector_profiles": [],
+    "pre_deployment_flows": [],
+    "flows": [
+        {
+            "name": "tu-feb-2023-mina-chatbot-1",
+            "id": "10912",
+            "version": "",
+            "connector_profile_maps": [],
+            "depends_on": [],
+            "action_config_maps": []
+        }
+    ],
+    "post_deployment_flows": [
+        {
+            "name": "tu-feb-2023-mina-postdeployment",
+            "id": "12218",
+            "version": "",
+            "connector_profile_maps": [],
+            "depends_on": [],
+            "inputs": []
+        }
+    ],
+    "parameters": []
+}

@@ -1,0 +1,61 @@
+{
+    "id": "tu-feb-2023-mina-chatbot-1",
+    "name": "TU Mina Stock Chatbot",
+    "image_url": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=826&t=st=1676145928~exp=1676146528~hmac=6af26e90ab03aa84ae8faa3c3acafcbca786df380dc736a441bd775bdd8b0f88",
+    "description": "Mina stocks bot",
+    "preview_url": "https://www.example.com/",
+    "categories": ["Communication"],
+    "build_info": {
+        "product_name": "TU mina Stock Chatbot",
+        "product_description": "Mina stocks bot",
+        "product_logo": "",
+        "product_title_image": "",
+        "documentation": {},
+        "support_info": {
+            "emails": ["test.support@devfactory.com"],
+            "phone": "+91-8989898989",
+            "additional_info": {}
+          },
+        "product_features": [
+            {
+                "feature_name": "help",
+                "feature_image": "https://www.flaticon.com/free-icon/customer-support_2951105"
+            },
+            {
+                "feature_name": "news",
+                "feature_image": "https://cdn-icons-png.flaticon.com/512/2965/2965879.png"
+            },
+            {
+                "feature_name": "price",
+                "feature_image": "https://www.flaticon.com/free-icon/best-price_2854320"
+            },
+            {
+                "feature_name": "recommendations",
+                "feature_image": "https://www.flaticon.com/free-icon/quality_3500954"
+            }
+        ],
+        "product_screens": [
+            {
+                "screenType": "title",
+                "displayImage": "",
+                "heading": "TU mina Stock Chatbot",
+                "subHeading": "Mina stocks bot",
+                "screenConfig": { "config_data_schema": {}, "config_ui_schema": {} }
+            },
+            {
+                "screenType": "config",
+                "displayImage": "",
+                "heading": "Configurations",
+                "subHeading": "configs",
+                "screenConfig": {
+                "config_data_schema": {},
+                "config_ui_schema": {
+                },
+                "mapping_config": [
+                    { "config_data_field": "", "parameter_name": "" }
+                ]
+                }
+            }
+        ]
+    }
+}
