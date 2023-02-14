@@ -1,0 +1,83 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "CF Template for Intro2Deploy",
+    "Resources": {
+        "NotifTopic": {
+            "Type": "AWS::SNS::Topic",
+            "Properties": {
+                "TopicName": "minaghebrial-intro2deploy-topic",
+                "Subscription": [
+                    {
+                        "Endpoint": "mina.ghebrial@trilogy.com",
+                        "Protocol": "email"
+                    }
+                ]
+            }
+        },
+        "MainBucket": {
+            "Type": "AWS::S3::Bucket",
+            "DependsOn": "BucketToSNSPermission",
+            "Properties": {
+                "BucketName": "minaghebrial-intro2deploy",
+                "NotificationConfiguration": {
+                    "TopicConfigurations": [
+                        {
+                            "Topic": {
+                                "Ref": "NotifTopic"
+                            },
+                            "Event": "s3:ObjectCreated:*"
+                        }
+                    ]
+                }
+            }
+        },
+        "BucketToSNSPermission": {
+            "Type": "AWS::SNS::TopicPolicy",
+            "Properties": {
+                "PolicyDocument": {
+                    "Id": "minaghebrial-intro2deploy-policy",
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "notifTopic-statement-id",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "s3.amazonaws.com"
+                            },
+                            "Action": "SNS:Publish",
+                            "Resource": {
+                                "Ref": "NotifTopic"
+                            }
+                        }
+                    ]
+                },
+
+                "Topics": [
+                    {
+                        "Ref": "NotifTopic"
+                    }
+                ]
+            }
+        }
+    },
+    "Outputs": {
+        "SNSTopicName": {
+            "Description": "Name of the SNS topic",
+            "Value": {
+                "Ref": "NotifTopic"
+            }
+        },
+        "MainBucketName": {
+            "Description": "Name of the main bucket",
+            "Value": {
+                "Ref": "MainBucket"
+            }
+        },
+        "SNSPolicyName": {
+            "Description": "Name of the SNS policy",
+            "Value": {
+                "Ref": "BucketToSNSPermission"
+            }
+        }
+    }
+}
