@@ -1,0 +1,104 @@
+query twoa {
+  characters(page: 1) {
+    results {
+      name
+      episode {
+        episode
+      }
+    }
+  }
+
+}
+
+query twoai {
+  characters(page: 3, filter: {
+    gender: "Female"
+  }) {
+    results {
+      name
+      episode {
+        episode
+      }
+    }
+  }
+}
+
+query twob {
+  characters( filter: {
+    name: "Rick Sanchez"
+  }) {
+    results {
+      name
+      episode {
+        episode
+      }
+    }
+  }
+}
+
+query twoc {
+  locations( filter: {
+    dimension: "unknown"
+  }) {
+    info {
+      count
+    }
+    results {
+      name
+
+    }
+  }
+}
+query twod {
+  episodes(filter: { episode: "S02E01" }) {
+    results{
+    name
+    air_date
+    id
+    characters {
+      id
+      image
+      name
+      status
+      gender
+      location {
+        id
+        name
+        dimension
+      }
+      origin {
+        id
+        name
+        dimension
+      }
+      episode {
+        name
+        episode
+        air_date
+      }
+
+    }
+    }
+  }
+}
+
+query threea {
+episodes(filter: { episode: "S01E01" }) {
+    results{
+    air_date
+    }
+}
+}
+
+query threeb {
+ characters( filter: {
+    name: "Antenna Rick"
+  }) {
+    results {
+      name
+      episode {
+        episode
+      }
+    }
+  }
+}
