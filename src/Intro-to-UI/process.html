@@ -1,0 +1,32 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </header>
+    <body class="d-flex justify-content-center bg-light flex-column">
+        <div class="d-none align-self-center my-3" role="alert" id = "alert_placeholder"></div>
+        <div class="d-none spinner-border align-self-center" role="status" id="spinnerloader"></div>
+        <div class="w-25 h-75 d-flex flex-column align-self-center shadow-lg bg-white rounded zindex-modal position-absolute" id="modal">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-process" role="tabpanel" aria-labelledby="nav-process-tab">
+                    <form id="processForm" class="d-flex flex-column">
+                        <div class="form-group my-3 mt-5">
+                          <label for="S3Links1">S3 Links (Comma separated)</label>
+                          <input name="s3links" class="form-control" id="S3Links1" placeholder="Enter S3 bucket Links" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="Parallelism1">Parallelism</label>
+                          <input name="parallelism" class="form-control" id="Parallelism1" placeholder="Parallelism Count" required>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button type="submit" class="btn btn-primary w-50" id="processSubmit">Process</button>
+                        </div>
+                    </form>
+                    <div class="d-flex justify-content-center mt-5"><img src="img/logo.png" class="w-75"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</html>
