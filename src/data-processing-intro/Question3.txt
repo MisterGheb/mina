@@ -1,0 +1,9 @@
+What is the difference between bucketing and partitioning in athena ?
+
+
+Bucketing is a technique for grouping data files based on a specific column or set of columns. 
+Partitioning, on the other hand, is a technique for dividing a dataset into smaller, more manageable 
+parts based on the values of one or more columns. 
+
+The main difference between bucketing and partitioning is that bucketing is about grouping data files together 
+based on column values, while partitioning is about dividing the data into smaller parts based on those values. 

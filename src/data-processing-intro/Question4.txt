@@ -1,0 +1,22 @@
+Batch processing is when data is processed in a large batch all at once, typically with a delay between when 
+the data is collected and when it is processed. Batch processing is used for tasks like data analysis and large-scale 
+data processing. Stream processing, on the other hand, is when data is processed in real-time as it is generated. 
+Stream processing is used for tasks like real-time analytics and real-time monitoring.
+
+use cases for batch processing are:
+
+End-of-day reporting for a financial institution: A financial institution can collect data throughout the day 
+and then process the data as a batch at the end of the day to produce reports that summarize the activities and
+performance of the institution.
+
+Large-scale data analysis: A business can collect data from various sources, store it in a data warehouse,
+ and then process the data as a batch to extract insights and patterns from the data.
+
+
+use cases for stream processing are:
+
+Real-time stock trading: Financial institutions can use stream processing to analyze real-time data on stock 
+prices and quickly identify patterns and trends to inform their trading decisions.
+
+Internet of Things (IoT) applications: IoT devices generate vast amounts of data, and stream processing can be used to 
+process this data in real-time to detect anomalies, trigger alerts, and take action
