@@ -1,7 +1,3 @@
-
-
-
--- THE MURDERER:
 WITH gym_checkins AS (
     SELECT person_id, name
     FROM get_fit_now_member
