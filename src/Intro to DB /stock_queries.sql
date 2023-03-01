@@ -4,11 +4,12 @@ FROM dbAssMilestone2_OHLC
 WHERE market_id = (SELECT id FROM market_day WHERE date = 'YYYY-MM-DD')
   AND stocks_id = (SELECT id FROM dbAssMilestone2_stocks WHERE name = 'stock_name');
 
--- 2. This SQL query takes a persons sell trades as a profit and buy trades as a loss and sums the total to give the net profit_loss on a given date
+-- 2. Net profit/loss made by a user on a given day
 
-SELECT SUM(CASE WHEN transaction_type = "sell" THEN total WHEN transaction_type = "buy" THEN -total  END) as "profit_loss"
-FROM stocks
-GROUP BY date = "date"
+SELECT o.stock_id, (o.bid_price - h.avg_bid_price) * o.quantity AS net_profit_loss
+FROM orders o
+JOIN holdings h ON o.stock_id = h.stock_id AND o.users_id = h.users_id
+WHERE o.users_id = 'User_ID' AND o.created_at= NOW()::timestamp
 
 --3. This is an SQL query that takes stock_id, stock price and date from a stocks table and calculates the average price of each stock at the end of a month
 -- it then uses that information to calculate the percentage growth of that stock and returns a limit of 5 stocks
@@ -46,3 +47,22 @@ FROM
   JOIN users ON dbAssMilestone2_holdings.user_id = users.id
 GROUP BY 
   users.id;
+
+
+-- Top performing stock in a users portfolio in the previous month(percentage growth)
+SELECT (O1.close - O2.close)/O2.close *100 AS Percentage_Growth, O1.stocks_id
+FROM ohlcv AS O1
+JOIN ohlcv AS O2 ON O1.stocks_id = O2.stocks_id
+JOIN holdings AS P on O2.stocks_id = P.stocks_id
+WHERE O1.created_at = NOW()::timestamp
+AND O2.created_at = NOW()::timestamp
+ORDER BY Percentage_Growth DESC
+LIMIT 1
+-- Self join the dbAssMilestone2_OHLCV table on Stock_ID and filter 
+-- out the rows where one's date equals today's date and the other's equal the date a month ago,
+--  along with an inner join with dbAssMilestone2_Portfolio on the stock ID. This narrows down the results
+--   to the stocks present only in the user's portfolio along with their OHLCV data todays and a month ago.The
+--    close information is used to calculate the percentage growth. the query is ordered on the percentage growth
+--     calculated in descending order and limited to 1 result to find the best performing stock in user's portfolio.
+
+  
