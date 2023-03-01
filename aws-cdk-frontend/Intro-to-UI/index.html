@@ -1,0 +1,67 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </header>
+    <body class="d-flex justify-content-center bg-light flex-column">
+        <div class="d-none align-self-center my-3" role="alert" id = "alert_placeholder"></div>
+        <div class="d-none spinner-border align-self-center" role="status" id="spinnerloader"></div>
+        <div class="w-25 h-75 d-flex flex-column align-self-center shadow-lg bg-white rounded zindex-modal position-absolute">
+            <nav>
+                <div class="nav nav-tabs rounded" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-login" aria-selected="true">Login</button>
+                  <button class="nav-link" id="nav-signup-tab" data-bs-toggle="tab" data-bs-target="#nav-signup" type="button" role="tab" aria-controls="nav-signup" aria-selected="false">Signup</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                    <form id="loginForm" class="d-flex flex-column">
+                        <div class="form-group my-3 mt-5">
+                          <label for="Email1">Email address</label>
+                          <input name="email" type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                          <small id="emailHelp1" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="Password1">Password</label>
+                          <input name="password" type="password" class="form-control" id="Password1" placeholder="Password" required>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button type="submit" class="btn btn-primary w-50" id="loginSubmit">Login</button>
+                        </div>
+                    </form>
+                    <a id="github"class="d-flex justify-content-center" href="https://github.com/login/oauth/authorize?client_id=b435d80dacc3b7e5fd76">
+                      <img src="img/github.png" alt="github" class="w-75 ">
+                    </a>
+                    <div class="d-flex justify-content-center mt-5"><img src="img/logo.png" class="w-75"></div>
+                </div>
+                <div class="tab-pane fade  p-3" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+                    <form id="signupForm" class="d-flex flex-column">
+                        <div class="form-group my-3">
+                            <label for="username">Username</label>
+                            <input name="username" type="text" class="form-control" id="username" placeholder="Enter email" required>
+                          </div>
+                        <div class="form-group my-2 mb-3">
+                          <label for="Email2">Email address</label>
+                          <input name="email" type="email" class="form-control" id="Email2" aria-describedby="emailHelp2" placeholder="Username" required>
+                          <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group my-2">
+                          <label for="Password2">Password</label>
+                          <input name="pw" type="password" class="form-control" id="Password2" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword2">Confirm Password</label>
+                            <input name="conf-pw" type="password" class="form-control" id="confirmPassword2" placeholder="Password" required>
+                          </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="submit" class="btn btn-primary w-50" id="signupSubmit">Signup</button>
+                        </div>
+                    </form>
+                    <div class="d-flex justify-content-center mt-5"><img src="img/logo.png" class="w-75"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+</html>
